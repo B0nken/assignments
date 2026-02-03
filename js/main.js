@@ -1,21 +1,39 @@
+import { assignmentsData } from "./assignment.js";
+
 document.addEventListener("DOMContentLoaded", () => {
     createNav();
-    if (document.getElementById("card-cont"))  createCard()
+    if (document.getElementById("card-cont"))  createCard();
 });
 
 function createNav() {
-    const nav = document.querySelector("#globalNav");
+    const nav = document.querySelector("#navigation");
     const subPage = window.location.pathname.includes("assignment")
     const prefix = subPage ? "../" : "";
     const ul = document.createElement("ul");
 
-    assignmentsData.forEach(item => {
+    const homeLi = document.createElement("li");
+    const homeA = document.createElement("a");
+    homeA.href = `${prefix}index.html`;
+    homeA.textContent = "Hem";
+
+    if (!subPage) {
+        homeA.classList.add("active")
+    }
+
+    homeLi.appendChild(homeA);
+    ul.appendChild(homeLi)
+
+    assignmentsData.forEach(task => {
         const li = document.createElement("li");
         const a = document.createElement("a");
-        a.href = prefix + item.link;
-        a.textContent = item.title;
+        a.href = prefix + task.link;
+        a.textContent = task.title;
 
-        if (window.location.pathname.includes(item.id)) a.classList.add("active")
+        const current = window.location.pathname;
+
+        if (window.location.pathname.endsWith(task.link)) {
+    a.classList.add("active");
+}
 
         li.appendChild(a);
         ul.appendChild(li);    
@@ -24,14 +42,15 @@ function createNav() {
 }
 
 function createCard() {
-    const cont = document.querySelector("#card-cont");
-    assignments.forEach(item => {
-        const div = document.createElement("div");
-        div.classname = "card";
-        div.innerHTML = `<h3>${item.title}</h3>
-        <p>${item.desc}</p>
-        <a href="${item.link}">Visa</a>`;
-        cont.appendChild(div);
-        
-    });
-}
+     const cont = document.querySelector("#card-cont");
+     assignmentsData.forEach(task => {
+         const div = document.createElement("div");
+         div.className = "card";
+         div.innerHTML = `
+         <h3>${task.title}</h3>
+         <p>${task.desc}</p>
+         <a href="${task.link}" class="stretched"></a>`;
+         cont.appendChild(div);
+         
+     });
+ }
