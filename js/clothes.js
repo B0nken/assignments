@@ -8,7 +8,9 @@ export const clothes = [
         ,
         image: "img/0.png"
         ,
-        category: "tops"
+        category: "tops",
+
+        price: 599
 
     },
 
@@ -21,7 +23,9 @@ export const clothes = [
         ,
         image: "img/1.png"
         ,
-        category: "accessories"
+        category: "accessories",
+
+        price: 199
 
     },
 
@@ -34,7 +38,9 @@ export const clothes = [
         ,
         image: "img/2.png"
         ,
-        category: "footwear"
+        category: "footwear",
+
+        price: 799
 
     },
 
@@ -47,7 +53,9 @@ export const clothes = [
         ,
         image: "img/3.png"
         ,
-        category: "bottom"
+        category: "bottom",
+
+        price: 499
 
     },
 
@@ -60,7 +68,9 @@ export const clothes = [
         ,
         image: "img/4.png"
         ,
-        category: "accessories"
+        category: "accessories",
+
+        price: 199
 
     },
 
@@ -73,7 +83,9 @@ export const clothes = [
         ,
         image: "img/5.png"
         ,
-        category: "tops"
+        category: "tops",
+
+        price: 299
 
     },
 
@@ -86,7 +98,9 @@ export const clothes = [
         ,
         image: "img/6.png"
         ,
-        category: "accessories"
+        category: "accessories",
+
+        price: 99
 
     },
 
@@ -99,7 +113,9 @@ export const clothes = [
         ,
         image: "img/7.png"
         ,
-        category: "accessories"
+        category: "accessories",
+
+        price: 99
 
     },
 

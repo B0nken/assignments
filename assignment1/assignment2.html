@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../global.css">
     <script src="../js/main.js" type="module"></script>
-    <script src="../js/assignment.js" type="module"></script>
+    <script src="../js/shop.js" type="module"></script>
 </head>
 <body>
     
@@ -15,10 +15,22 @@
         <nav id="navigation"></nav>
     </header>
 
-    <main>
-        <h2>Beskrivning av uppgift</h2>
-        <p></p>
-    </main>
+    <div class="shop-cont">
+        <main>
+            <section id="shop-grid" class="grid-layout">
+
+            </section>
+        </main>
+
+        <aside>
+            <h2>Kundvagn</h2>
+            <div id="cart">
+            </div>
+            <p>Total: 
+                <span id="total">0</span>kr</p>
+                <button id="clear" class="btn-clear">Töm kundvagnen</button>
+        </aside>
+    </div>
 
 </body>
 </html>
