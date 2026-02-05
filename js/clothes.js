@@ -6,7 +6,7 @@ export const clothes = [
         ,
         desc: "Comfortable knitted sweater"
         ,
-        image: "img/0.png"
+        image: "0.png"
         ,
         category: "tops",
 
@@ -21,7 +21,7 @@ export const clothes = [
         ,
         desc: "Fitted knitted hat"
         ,
-        image: "img/1.png"
+        image: "1.png"
         ,
         category: "accessories",
 
@@ -36,7 +36,7 @@ export const clothes = [
         ,
         desc: "Quality sneakers"
         ,
-        image: "img/2.png"
+        image: "2.png"
         ,
         category: "footwear",
 
@@ -51,7 +51,7 @@ export const clothes = [
         ,
         desc: "Fitted straight pants"
         ,
-        image: "img/3.png"
+        image: "3.png"
         ,
         category: "bottom",
 
@@ -66,7 +66,7 @@ export const clothes = [
         ,
         desc: "Knitted soft scarf"
         ,
-        image: "img/4.png"
+        image: "4.png"
         ,
         category: "accessories",
 
@@ -81,7 +81,7 @@ export const clothes = [
         ,
         desc: "Loose buttoned shirt"
         ,
-        image: "img/5.png"
+        image: "5.png"
         ,
         category: "tops",
 
@@ -96,7 +96,7 @@ export const clothes = [
         ,
         desc: "Knitted warm gloves"
         ,
-        image: "img/6.png"
+        image: "6.png"
         ,
         category: "accessories",
 
@@ -111,7 +111,7 @@ export const clothes = [
         ,
         desc: "Quality comfortable socks"
         ,
-        image: "img/7.png"
+        image: "7.png"
         ,
         category: "accessories",
 
