@@ -4,6 +4,7 @@ let cart = [];
 
 document.addEventListener("DOMContentLoaded", () => {
     createProducts()
+    updateCart()
 })
 //function for creating every card with html
 function createProducts() {
@@ -16,7 +17,7 @@ function createProducts() {
         <p>${item.desc}</p>
         <p class="price">${item.price}: kr</p>
         <button class="add" data-id="${item.id}">Lägg till i vagnen</button>
-        </article>`).join('');//.join('') removes comma from the html so it doesnt show on the site
+        </article>`).join(``);//.join('') removes comma from the html so it doesnt show on the site
 
         document.querySelectorAll(".add").forEach(btn => { //selects every button with the class .add
             btn.addEventListener("click", (e)=> { 
@@ -35,5 +36,16 @@ function addCart(id) {
     } else {
         cart.push({...product, amount: 1}); //if it doesnt exist, create a copy and add to amount
     }
-    console.log(cart)
+    updateCart()
+}
+
+function updateCart() {
+    const cartList = document.getElementById("cartItems");
+    const totalElement = document.getElementById("total");
+
+    cartList.innerHTML = cart.map(item => `
+        <li>${item.amount}st ${item.name} - ${item.price * item.amount}kr</li>`).join(``);//creates list in the cart
+
+        const total = cart.reduce((sum, item) => sum + (item.price * item.amount), 0); //calculates the total depending on which items are added and how many
+        totalElement.textContent = total; //writes out the total in html
 }
