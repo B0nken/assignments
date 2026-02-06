@@ -94,8 +94,8 @@ letter-spacing: 1px;
 }
 .card {
     border: 3px solid bisque;
-    border-radius: 5px;
-    overflow: hidden;
+    border-radius: 15px;
+    
     box-shadow: 10px 10px 15px rgb(0, 0, 0);
     background-color: rgb(35, 35, 35);
     padding: 20px;
@@ -142,3 +142,16 @@ letter-spacing: 1px;
     z-index: 1;
 }
 
+footer {
+    background-color: bisque;
+    color: black;
+    text-align: center;
+    padding: 1rem;
+    border-top: 3px solid black;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-top: 7%;
+    font-weight: bold;
+    
+    
+}

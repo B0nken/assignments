@@ -1,0 +1,14 @@
+main {
+    background-color: rgb(49, 49, 49);
+    border: 3px solid bisque;
+    color: bisque;
+    margin-bottom: 18%;
+    width: 20%;
+    text-wrap: wrap;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+}
+
+h2 {
+    text-decoration: underline;
+    color: bisque;
+}
