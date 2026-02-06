@@ -7,7 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function createNav() {
     const nav = document.querySelector("#navigation");
-    const subPage = window.location.pathname.includes("assignment")
+    const path = window.location.pathname;
+    const isHome = path.endsWith("index.html") || path.endsWith("/");
+    const subPage = !isHome; 
+
     const prefix = subPage ? "../" : "";
     const ul = document.createElement("ul");
 
