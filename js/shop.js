@@ -11,7 +11,7 @@ function createProducts() {
     const grid = document.getElementById("shop-grid");
     //uses .map() to go through every item and creates a card for it
     grid.innerHTML = clothes.map(item => `<article class="clothes-card">
-        <img src="../img/${item.image}" alt="${item.name}">
+        <img src="../assignment2/img/${item.image}" alt="${item.name}">
         <h3>${item.name}</h3>
         <p><em>${item.category}</em></p>
         <p>${item.desc}</p>
