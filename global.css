@@ -142,7 +142,7 @@ letter-spacing: 1px;
     z-index: 1;
 }
 
-footer {
+.footer {
     background-color: bisque;
     color: black;
     text-align: center;
