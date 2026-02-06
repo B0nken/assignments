@@ -1,6 +1,6 @@
 import { clothes } from './clothes.js';
 
-let cart = [];
+let cart = JSON.parse(localStorage.getItem("shop-cart")) || [];
 
 document.addEventListener("DOMContentLoaded", () => {
     createProducts()
@@ -37,6 +37,7 @@ function addCart(id) {
         cart.push({...product, amount: 1}); //if it doesnt exist, create a copy and add to amount
     }
     updateCart()
+    save()
 }
 
 function updateCart() {
@@ -44,8 +45,20 @@ function updateCart() {
     const totalElement = document.getElementById("total");
 
     cartList.innerHTML = cart.map(item => `
-        <li>${item.amount}st ${item.name} - ${item.price * item.amount}kr</li>`).join(``);//creates list in the cart
+        <li>${item.amount}st ${item.name} - ${item.price * item.amount}kr</li>`).join(``) || "<li>Kundvagnen är tom</li>";//creates list in the cart
 
         const total = cart.reduce((sum, item) => sum + (item.price * item.amount), 0); //calculates the total depending on which items are added and how many
         totalElement.textContent = total; //writes out the total in html
 }
+
+function save() {
+    localStorage.setItem("shop-cart", JSON.stringify(cart)); //localStorage can only save text, so the array gets converted to a string
+    updateCart();
+}
+
+document.getElementById("clear").addEventListener("click", () => {
+    cart = [];
+    save()
+    updateCart()
+    
+})
