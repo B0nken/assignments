@@ -1,0 +1,11 @@
+[
+{ "id": "1", "name": "Eric Clapton", "skillevel": 8, "catchphrase": "LAYLAA"},
+{ "id": "2", "name": "Jeff Beck", "skillevel": 10, "catchphrase": "Im gonna shred you"},
+{ "id": "3", "name": "Paul McCartney", "skillevel": 7, "catchphrase": "I will give you the blackeye in the dead of night"},
+{ "id": "4", "name": "B. B. King", "skillevel": 9, "catchphrase": "I'm not gonna be Johnny B. Good for you"},
+{ "id": "5", "name": "Little Richard", "skillevel": 6, "catchphrase": "You will be a tutti frutti when im done"},
+{ "id": "6", "name": "Slash", "skillevel": 5, "catchphrase": "Welcome to my jungle"},
+{ "id": "7", "name": "Jimmy Page", "skillevel": 7, "catchphrase": "Get ready for the stairway to hell"},
+{ "id": "8", "name": "Curt Cobain", "skillevel": 3, "catchphrase": "Come as you are!"}
+
+]
