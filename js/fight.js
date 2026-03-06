@@ -57,4 +57,3 @@ export class Fight {
 
 }
 
-console.log(create())
