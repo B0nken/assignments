@@ -51,7 +51,17 @@ export class Fight {
         <div id="p1-${this.#p2.id}">
         <h3>${this.#p2.name}</h3> Skill level: ${this.#p2.skillevel}
         <strong>${p2Phrase}</strong>
-        </div>`
+        </div>
+        
+        <button class="btn">Starta Fighten!</button>`;
+
+        const btn = this.#element.querySelector(".btn")
+
+        btn.addEventListner("click", () => {
+            this.match();
+        });
+
+        return this.#element;
     }
 
 
