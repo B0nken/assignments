@@ -35,4 +35,26 @@ export class Fight {
         }
     }
 
+    create() {
+        this.#element = document.createElement("div") //creates new element
+        this.#element.className = "card"; //gives the new element a class
+
+        const p1Phrase = this.#p1.catchphrase //gets the catchphrases
+        const p2Phrase = this.#p2.catchphrase
+
+        this.#element.innerHTML = `
+        <div id="p1-${this.#p1.id}">
+        <h3>${this.#p1.name}</h3> Skill level: ${this.#p1.skillevel}
+        <strong>${p1Phrase}</strong>
+        </div>
+        
+        <div id="p1-${this.#p2.id}">
+        <h3>${this.#p2.name}</h3> Skill level: ${this.#p2.skillevel}
+        <strong>${p2Phrase}</strong>
+        </div>`
+    }
+
+
 }
+
+console.log(create())
