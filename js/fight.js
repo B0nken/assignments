@@ -71,6 +71,14 @@ export class Fight {
 
         const p1Cont = this.#element.querySelector(`#p1-${this.#p1.id}`)
         const p2Cont = this.#element.querySelector(`#p2-${this.#p2.id}`)
+
+        if (this.#winner === this.#p1) {
+            p1Cont.classList.add("winner")
+            p2Cont.classList.add("loser")
+        } else {
+            p2Cont.classList.add("winner")
+            p1Cont.classList.add("loser")
+        }
     }
 
 }
