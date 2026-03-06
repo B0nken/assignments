@@ -64,6 +64,14 @@ export class Fight {
         return this.#element;
     }
 
+    update() {
+        this.#element.classList.add("finished")
+        const btn = this.#element.querySelector("btn");
+        btn.textContent = "Fight Klar"
+
+        const p1Cont = this.#element.querySelector(`#p1-${this.#p1.id}`)
+        const p2Cont = this.#element.querySelector(`#p2-${this.#p2.id}`)
+    }
 
 }
 
