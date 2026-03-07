@@ -48,7 +48,7 @@ export class Fight {
         <strong>${p1Phrase}</strong>
         </div>
         
-        <div id="p1-${this.#p2.id}">
+        <div id="p2-${this.#p2.id}">
         <h3>${this.#p2.name}</h3> Skill level: ${this.#p2.skillevel}
         <strong>${p2Phrase}</strong>
         </div>
@@ -57,8 +57,9 @@ export class Fight {
 
         const btn = this.#element.querySelector(".btn")
 
-        btn.addEventListner("click", () => {
+        btn.addEventListener("click", () => {
             this.match();
+            this.update()
         });
 
         return this.#element;
@@ -66,8 +67,9 @@ export class Fight {
 
     update() {
         this.#element.classList.add("finished")
-        const btn = this.#element.querySelector("btn");
+        const btn = this.#element.querySelector(".btn");
         btn.textContent = "Fight Klar"
+        btn.disabled = true;
 
         const p1Cont = this.#element.querySelector(`#p1-${this.#p1.id}`)
         const p2Cont = this.#element.querySelector(`#p2-${this.#p2.id}`)
@@ -79,6 +81,8 @@ export class Fight {
             p2Cont.classList.add("winner")
             p1Cont.classList.add("loser")
         }
+
+        this.#element.dispatchEvent(new CustomEvent('fight-finished', { bubbles: true }));
     }
 
 }
