@@ -14,11 +14,12 @@ main {
     font-size: 2rem;
     color: black;
 
+
 }
 
 .match-header p {
     font-size: 1.5rem;
-    color: gray;
+
 }
 
 #bracket {
@@ -41,10 +42,9 @@ main {
 
 .round h3 {
     text-align: center;
-    color: bisque;
+    color: rgb(136, 136, 136);
     font-size: 2rem;
     margin-bottom: 2rem;
-
     border-bottom: 2px solid bisque;
 
 
@@ -80,6 +80,23 @@ main {
     box-shadow: none;
 }
 
+.fight-card h2 {
+    text-shadow: rgb(0, 0, 0) 5px 10px 5px;
+
+
+}
+
+#phrase {
+    color: rgb(196, 199, 255);
+    padding: 20px;
+
+}
+
+#line {
+    border: 2px solid bisque;
+    box-shadow: 0 0 15px black;
+}
+
 .winner h2 {
     color: rgb(22, 186, 0);
     font-weight: bold;
@@ -97,7 +114,7 @@ main {
 .loser h2 {
     color: rgb(186, 0, 0);
     font-weight: bold;
-    opacity: 1;
+    opacity: 0.5;
     text-shadow: 0 0 5px rgba(121, 0, 0, 0.8);
     transition: 0.3s ease;
 }
