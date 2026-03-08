@@ -125,3 +125,21 @@ main {
     background-color: gray;
     cursor: not-allowed;
 }
+
+#reset {
+    width: 20%;
+    padding: 10px 20px;
+    margin-top: 5px;
+    background-color: rgb(136, 0, 0);
+    border: 2px solid rgb(35, 35, 35);
+    color: bisque;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#reset:hover {
+    background-color: rgb(186, 0, 0);
+    width: 25%;
+    transition: 0.3s ease;
+
+}

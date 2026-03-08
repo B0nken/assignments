@@ -8,6 +8,11 @@ const bracketCont = document.getElementById("bracket")
 
 async function init() {
     await contestantsFetch()
+
+    const resetBtn = document.getElementById("reset");
+    resetBtn.addEventListener("click", () => {
+        start()
+    })
     start()
 }
 
