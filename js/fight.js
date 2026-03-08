@@ -22,8 +22,8 @@ export class Fight {
     match() {
         if (this.played) return false; //cant be played if already played
 
-        const skill1 = this.#p1.skillevel
-        const skill2 = this.#p2.skillevel
+        const skill1 = this.#p1.skillevel ?? 3
+        const skill2 = this.#p2.skillevel ?? 3
 
         const chance = skill1 / (skill1 + skill2) //get a value for player 1 between 0 - 1
 
@@ -37,20 +37,20 @@ export class Fight {
 
     create() {
         this.#element = document.createElement("div") //creates new element
-        this.#element.className = "card"; //gives the new element a class
+        this.#element.className = "fight-card"; //gives the new element a class
 
-        const p1Phrase = this.#p1.catchphrase //gets the catchphrases
-        const p2Phrase = this.#p2.catchphrase
+        const p1Phrase = this.#p1.catchphrase ?? "Låter gitarren sjunga" //gets the catchphrases
+        const p2Phrase = this.#p2.catchphrase ?? "Tyst och fokuserad"
 
         this.#element.innerHTML = `
         <div id="p1-${this.#p1.id}">
-        <h3>${this.#p1.name}</h3> Skill level: ${this.#p1.skillevel}
-        <strong>${p1Phrase}</strong>
+        <h2>${this.#p1.name}</h2> <p>Skill level: ${this.#p1.skillevel}
+        <strong>${p1Phrase}</strong></p>
         </div>
         
         <div id="p2-${this.#p2.id}">
-        <h3>${this.#p2.name}</h3> Skill level: ${this.#p2.skillevel}
-        <strong>${p2Phrase}</strong>
+        <h2>${this.#p2.name}</h2> <p>Skill level: ${this.#p2.skillevel}
+        <strong>${p2Phrase}</strong></p>
         </div>
         
         <button class="btn">Starta Fighten!</button>`;

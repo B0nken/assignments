@@ -1,0 +1,127 @@
+main {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.match-header {
+    background-color: bisque;
+    text-align: center;
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.match-header h2 {
+    font-size: 2rem;
+    color: black;
+
+}
+
+.match-header p {
+    font-size: 1.5rem;
+    color: gray;
+}
+
+#bracket {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    gap: 4rem;
+    padding: 2rem;
+    min-height: 900px;
+
+}
+
+.round {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 250px;
+}
+
+.round h3 {
+    text-align: center;
+    color: bisque;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+
+    border-bottom: 2px solid bisque;
+
+
+}
+
+
+.match-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
+
+
+}
+
+.fight-card {
+    border: 3px solid bisque;
+    border-radius: 15px;
+    background-color: rgb(35, 35, 35);
+    padding: 20px;
+    color: bisque;
+    text-align: center;
+    box-shadow: 10px 10px 15px rgb(0, 0, 0);
+    transition: 0.3s ease;
+    min-width: 250px;
+
+}
+
+
+.fight-card.finished {
+
+    border-color: gray;
+    box-shadow: none;
+}
+
+.winner h2 {
+    color: rgb(22, 186, 0);
+    font-weight: bold;
+    opacity: 1;
+    text-shadow: 0 0 5px rgba(14, 121, 0, 0.8);
+    font-size: 2rem;
+    transition: 0.3s ease;
+}
+
+.winner p {
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.loser h2 {
+    color: rgb(186, 0, 0);
+    font-weight: bold;
+    opacity: 1;
+    text-shadow: 0 0 5px rgba(121, 0, 0, 0.8);
+    transition: 0.3s ease;
+}
+
+.loser p {
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.btn {
+    background-color: bisque;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover:not(:disabled) {
+    background-color: rgba(255, 228, 196, 0.8);
+}
+
+.btn:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}

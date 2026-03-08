@@ -31,6 +31,7 @@ function start() {
 
     createRound(fighters, "Kvartsfinal")
 
+    console.log("Fighten har startat")
 }
 
 function createRound(currentFighters, roundName) {
@@ -41,6 +42,10 @@ function createRound(currentFighters, roundName) {
     roundTitle.textContent = roundName;
     roundCont.appendChild(roundTitle);
 
+    const matchList = document.createElement("div")
+    matchList.className = "match-list";
+    roundCont.appendChild(matchList)
+
     fightsAmount = []
 
     for (let i = 0; i < currentFighters.length; i += 2) {
@@ -48,7 +53,7 @@ function createRound(currentFighters, roundName) {
 
         fightsAmount.push(fight);
 
-        roundCont.appendChild(fight.create())
+        matchList.appendChild(fight.create())
     }
 
     bracketCont.appendChild(roundCont);
@@ -71,3 +76,4 @@ document.addEventListener("fight-finished", () => {
         }
     }
 })
+
