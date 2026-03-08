@@ -17,6 +17,11 @@ A shopping page with shopping cart funtionality
 * **Features:** Renders products from data model, ability to add or remove products and a shopping cart that saves changes to LocalStorage.
 * **Styling:** Takes part in both Global CSS and a specific shop.css file.
 
+### Assignment 3 -- Guitarist Tournament
+A simulated tournament between famous guitarists.
+* **Features** Renders cards with the different "players" and uses math to decide who wins in a fight by clicking a button.
+* **Styling** Takes part in both Global CSS and a specific css file assignment3.css 
+
 ---
 
 ## CONTENT/STRUCTURE
@@ -28,11 +33,15 @@ Description of important files and folders:
 * **assignments/** Folder including all specific assignments.
 * *assignment1/* HTML and CSS for assignment 1.
 * *assignment2/* HTML and CSS for assignment 2.
+* *assignment3/* HTML and CSS for assignment 3.
 * **js/** Folder including all JavaScript files.
 * *main.js* Affects the global navigation.
 * *assignment.js* Data structure for assignments on landing page.
 * *shop.js* Logic for the web shop
 * *clothes.js* Data structure for the products in assignment 2.
+* *guitarists.json* Data for objects for assignment 3.
+* *fight.js* Exported logic for the fights assignment 3.
+* *tournament.js* Logic for the tournament.
 
 ---
 
