@@ -44,13 +44,13 @@ export class Fight {
 
         this.#element.innerHTML = `
         <div id="p1-${this.#p1.id}">
-        <h2>${this.#p1.name}</h2> <p>Skill level: ${this.#p1.skillevel}
-        <strong>${p1Phrase}</strong></p>
+        <h2>${this.#p1.name}</h2> <p>(Skill Level: ${this.#p1.skillevel})<br>
+        <strong>"${p1Phrase}"</strong></p>
         </div>
         
         <div id="p2-${this.#p2.id}">
-        <h2>${this.#p2.name}</h2> <p>Skill level: ${this.#p2.skillevel}
-        <strong>${p2Phrase}</strong></p>
+        <h2>${this.#p2.name}</h2> <p>(Skill Level: ${this.#p2.skillevel})<br>
+        <strong>"${p2Phrase}"</strong></p>
         </div>
         
         <button class="btn">Starta Fighten!</button>`;
