@@ -14,6 +14,7 @@ async function init() {
         console.error("Something went wrong when getting the data", error)
     }
     renderHouse(houses)
+    ghostTypes(houses)
 }
 
 function renderHouse(houses) {
@@ -34,5 +35,25 @@ houses.forEach(house => {
 });
 }
 
+
+function ghostTypes(houses) {
+    const choose = document.getElementById("filter-ghost")
+
+    const types = new Set()
+
+    houses.forEach(house => {
+        house.ghostTypes.forEach(ghost => types.add(ghost))
+    })
+
+    console.log(types)
+
+    types.forEach(type => {
+        const option = document.createElement("option")
+        option.value = type
+        option.textContent = type.charAt(0).toUpperCase() + type.slice(1)
+
+        choose.appendChild(option)
+    })
+}
 
 init();
