@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +8,37 @@
     <script src="/js/spook.js" type="module"></script>
     <link rel="stylesheet" href="assignment4.css">
 </head>
+
 <body>
-<main>
-<section class="filters">
-    <h2>Filtrera spökhus</h2>
-    <form id="filter-form">
+    <main>
+        <section class="filters">
+            <h2>Filtrera spökhus</h2>
+            <form id="filter-form">
 
-        <label>Typ av spöke:
-            <select id="filter-ghost">
-                <option value="all">Alla spöken</option>
-            </select>
-        </label>
-    </form>
+                <label>
+                    Maxpris per natt: <span id="price-output">3000</span> kr
+                    <input type="range" id="filter-price" min="500" max="3000" value="3000" step="100">
+                </label>
 
-</section>
-    <section id="list"></section>
-</main>
+                <label>
+                    Lägsta skräcknivå: <span id="scare-output">1</span>
+                    <input type="range" id="filter-scare" min="1" max="5" value="1">
+                </label>
+
+                <label>Typ av spöke:
+                    <select id="filter-ghost">
+                        <option value="all">Alla typer</option>
+                    </select>
+                </label>
+
+                <label>
+                    <input type="checkbox" id="filter-wifi"> Kräver WiFi
+                </label>
+            </form>
+
+        </section>
+        <section id="list"></section>
+    </main>
 </body>
+
 </html>

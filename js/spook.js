@@ -15,12 +15,17 @@ async function init() {
     }
     renderHouse(houses)
     ghostTypes(houses)
+    
 }
 
 function renderHouse(houses) {
     const cont = document.getElementById("list")
     cont.innerHTML = ""
 console.log(houses.length)
+
+if (houses.length === 0) {
+    cont.innerHTML = "<p>Inga hus passar din sökning"
+}
     
 houses.forEach(house => {
     const card = document.createElement("div")
@@ -55,5 +60,39 @@ function ghostTypes(houses) {
         choose.appendChild(option)
     })
 }
+
+function filterHouses() {
+
+    const topPrice = parseInt(document.getElementById("filter-price").value)
+    const botScare = parseInt(document.getElementById("filter-scare").value)
+    const chosenGhost = document.getElementById("filter-ghost").value
+    const needWifi = document.getElementById("filter-wifi").checked
+
+    console.log(topPrice, botScare, chosenGhost, needWifi)
+
+    const filteredHouses = houses.filter(house => {
+        const matchPrice = house.pricePerNight <= topPrice
+        const matchScare = house.scareLevel >= botScare
+        const matchWifi = needWifi ? house.hasWifi === true : true
+        const matchGhost = chosenGhost === "all" ? true : house.ghostTypes.includes(chosenGhost)
+
+        return matchPrice && matchScare && matchWifi && matchGhost
+    })
+
+    renderHouse(filteredHouses)
+}
+
+document.getElementById("filter-price").addEventListener("input", (e) => {
+    document.getElementById("price-output").textContent = e.target.value
+    filterHouses()
+})
+
+document.getElementById('filter-scare').addEventListener('input', (e) => {
+    document.getElementById('scare-output').textContent = e.target.value;
+    filterHouses();
+});
+
+document.getElementById("filter-ghost").addEventListener("change", filterHouses)
+document.getElementById("filter-wifi").addEventListener("change", filterHouses)
 
 init();
