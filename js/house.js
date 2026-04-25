@@ -19,6 +19,7 @@ async function initHouse() {
       return;
     }
     renderDetail(currentHouse);
+    renderMap(currentHouse)
   } catch (error) {
     console.error(error);
     showError;
@@ -45,6 +46,19 @@ function renderDetail(house) {
     <h3>Beskrivning</h3>
     <p>${house.description}</p>
     </div>`;
+}
+
+function renderMap(house) {
+    const map = L.map("map").setView([house.coordinates.lat, house.coordinates.lng], 13)
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map)
+
+    L.marker([house.coordinates.lat, house.coordinates.lng])
+    .addTo(map)
+    .bindPopup(`<p>${house.name}</p><br>
+        ${house.location}`)
 }
 
 initHouse();
