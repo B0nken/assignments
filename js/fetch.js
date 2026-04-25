@@ -3,7 +3,7 @@ export async function fetchHouses() {
     const response = await fetch("houses.json"); 
     
     if (!response.ok) {
-        throw new Error(`HTTP-error! Status: ${response.status}`);
+        throw new Error(`Error! Status: ${response.status}`);
     }
     
     return await response.json();

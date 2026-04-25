@@ -1,6 +1,5 @@
 import { fetchHouses } from "./fetch.js";
 
-
 let houses = [];
 
 async function init() {
