@@ -1,1 +1,324 @@
-#map { height: 180px; }
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#title {
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 60px;
+  color: #fafafa;
+}
+
+body {
+  background-color: #09090b;
+  color: #d1d1d1;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 100px;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Georgia", "Times New Roman", serif;
+  color: #dbdbdb;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.filters {
+  padding-bottom: 40px;
+  border-bottom: 1px solid #c6c6c6;
+  margin-bottom: 60px;
+}
+
+.filters h2 {
+  font-size: 1.2rem;
+  color: #b2b2b2;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 2rem;
+}
+
+#filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-end;
+}
+
+#filter-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #d1d1d1;
+  gap: 12px;
+}
+
+input[type="range"] {
+  accent-color: #ff0000;
+  cursor: pointer;
+}
+
+select,
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #3f3f46;
+  color: #ffffff;
+  padding: 8px 0;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+select:focus,
+input:focus {
+  outline: none;
+  border-bottom-color: #ff0000;
+}
+
+.card {
+  background: #240202;
+  padding: 30px;
+  border-radius: 8px;
+  border: 2px solid rgb(108, 0, 0);
+}
+
+#list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 60px 40px;
+}
+
+#list div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#list img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+#list h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+#list p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+#list a {
+  display: inline-block;
+  align-self: center;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 0.15em;
+  border: 1px solid #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+#list a:hover {
+  color: #ff0000;
+  border-bottom-color: #ff0000;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+#house-details {
+  margin-bottom: 80px;
+}
+
+#house-details h2 {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#house-details img {
+  width: 100%;
+  height: 65vh;
+  object-fit: cover;
+  margin-bottom: 60px;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  background: #18181b;
+  margin-bottom: 60px;
+}
+
+.info p {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #e4e4e7;
+}
+
+.desc {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 2;
+  color: #d4d4d8;
+}
+
+.desc h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #71717a;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+
+  margin: 60px 0;
+}
+
+#booking-section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 60px;
+  border-top: 1px solid #27272a;
+}
+
+#booking-form label {
+  display: block;
+  margin-top: 30px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #a1a1aa;
+}
+
+#booking-form input[type="date"],
+#booking-form input[type="number"],
+#booking-form input[type="text"] {
+  width: 100%;
+  margin-top: 10px;
+}
+
+#booking-form fieldset {
+  border: 1px solid #27272a;
+  padding: 30px;
+  margin-top: 40px;
+}
+
+#booking-form legend {
+  padding: 0 15px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+.addon-checkbox {
+  margin-right: 15px;
+  accent-color: #ff0000;
+}
+
+.price {
+  font-family: "Georgia", serif;
+  font-size: 2.5rem;
+  color: #fafafa;
+  margin: 60px 0 40px 0;
+  text-align: center;
+}
+
+.price em {
+  color: #ff0000;
+  font-style: normal;
+}
+
+.submit {
+  background: #fafafa;
+  color: #09090b;
+  border: none;
+  padding: 20px;
+  width: 100%;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+.submit:hover {
+  background: #ff0000;
+  color: #fafafa;
+}
+
+.success-box {
+  margin-top: 40px;
+  padding: 60px 40px;
+  background: #052e16;
+  color: #a7f3d0;
+  text-align: center;
+}
+
+.success-box h3 {
+  color: #34d399;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.receipt-total {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: #6ee7b7;
+}
+
+.error-text {
+  color: #f87171;
+  font-size: 0.9rem;
+  margin-top: 15px;
+  text-align: center;
+}
+
+#back a {
+  font-family: "Georgia", "Times New Roman", serif;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  border: 2px solid #ff0000;
+  padding: 20px;
+  text-decoration: none;
+  background-color: #240202;
+}

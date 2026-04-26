@@ -23,6 +23,7 @@ function renderHouse(houses) {
 
   houses.forEach((house) => {
     const card = document.createElement("div");
+    card.classList.add("card")
 
     card.innerHTML = `
     <img src="/assignment4/img/${house.image}" alt="${house.name}">
