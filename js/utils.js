@@ -1,5 +1,5 @@
 export function showError(containerId, message) {
-  const container = document.getElementById("containerId");
+  const container = document.getElementById(containerId);
   if (container) {
     container.innerHTML = `<div>${message}</div>`;
   }

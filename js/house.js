@@ -1,5 +1,6 @@
 import { fetchHouses } from "./fetch.js";
 import { scareLevelText, showError } from "./utils.js";
+import { Booking } from './booking.js';
 
 async function initHouse() {
   const params = new URLSearchParams(window.location.search);
@@ -22,7 +23,7 @@ async function initHouse() {
     renderMap(currentHouse)
   } catch (error) {
     console.error(error);
-    showError;
+    showError("error-container", "Kunde inte ladda huset");
   }
 }
 
@@ -34,7 +35,7 @@ function renderDetail(house) {
 
   container.innerHTML = `
     <h2>${house.name}</h2>
-    <img src="/assignment4/img/${house.img}" alt="${house.name}"
+    <img src="/assignment4/img/${house.image}" alt="${house.name}">
     <div class="info">
     <p>Plats: ${house.location}</p>
     <p>Skräcknivå: ${scaryText}</p>
@@ -42,7 +43,7 @@ function renderDetail(house) {
     <p>Wifi: ${wifiInfo}</p>
     <p>Pris per natt: ${house.pricePerNight} kr</p>
     </div>
-    <div class=""desc>
+    <div class="desc">
     <h3>Beskrivning</h3>
     <p>${house.description}</p>
     </div>`;
