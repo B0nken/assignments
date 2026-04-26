@@ -21,6 +21,7 @@ async function initHouse() {
     }
     renderDetail(currentHouse);
     renderMap(currentHouse)
+    setupBooking(currentHouse)
   } catch (error) {
     console.error(error);
     showError("error-container", "Kunde inte ladda huset");
@@ -62,4 +63,56 @@ function renderMap(house) {
         ${house.location}`)
 }
 
-initHouse();
+function setupBooking(house) {
+
+    const booking = new Booking(house.name, house.pricePerNight)
+
+    const from = document.getElementById("booking-form")
+    const errorContainer = document.getElementById("book-error")
+    const priceDisplay = document.getElementById("total-price")
+
+    function updatePrice() {
+        const days = parseInt(document.getElementById("book-days").value) || 1
+        const code = document.getElementById("book-code").value || ""
+
+        let addons = 0
+        document.querySelectorAll(".addon-checkbox:checked").forEach(box => {
+            addons += parseInt(box.value)
+        })
+
+        const currentPrice = booking.sumTotal(days, addons, code);
+        priceDisplay.textContent = currentPrice
+    }
+
+    from.addEventListener("input", updatePrice)
+    updatePrice()
+
+    from.addEventListener("submit", (e) => {
+        e.preventDefault()
+
+        const dateString = document.getElementById("book-date").value
+        const days = parseInt(document.getElementById("book-days").value) || 1
+        const code = document.getElementById("book-code").value || ""
+
+        let addons = 0
+        document.querySelectorAll(".addon-checkbox:checked").forEach(box => {
+            addons += parseInt(box.value)
+    })
+    const errors = booking.check(dateString, days)
+
+    if (errors.length > 0) {
+        errorContainer.innerHTML = errors.join("<br>")
+        return
+    }
+    errorContainer.innerHTML = ""
+
+    const finalPrice = booking.sumTotal(days, addons, code)
+
+    const receiptHtml = booking.getConfirmation(dateString, days, finalPrice)
+
+    const bookingSection = document.getElementById("booking-section")
+    bookingSection.innerHTML = receiptHtml
+})
+
+}
+initHouse()
